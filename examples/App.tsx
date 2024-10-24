@@ -11,7 +11,47 @@ const examples = {
     grid: {title: 'Custom Grid', file: 'CustomGrid'},
     pagination: {title: 'Pagination', file: 'Pagination'},
     custom: {title: 'Custom Field', file: 'CustomField'},
-    reordering: {title: 'Reordering', file: 'Reordering'}
+    reordering: {title: 'Reordering', file: 'Reordering'},
+  WidgetDCFCellEx: {
+    title: 'WigetDCFCell',
+    file: 'WidgetDCFCellEx',
+    layout: 'HBox',
+  },
+  ColumnsEditorEx: {
+    title: 'ColumnsEditor',
+    file: 'ColumnsEditorEx',
+    layout: 'HBox',
+  },
+  CommandViewerEx: {
+    title: 'CommandViewer',
+    file: 'CommandViewerEx',
+    layout: 'HBox',
+  },
+  DFViewerEx: { title: 'DFViewer', file: 'DFViewerEx', layout: 'HBox' },
+  DFViewerEx_string_index: {
+    title: 'DFViewer string index',
+    file: 'DFViewerEx_string_index',
+    layout: 'HBox',
+  },
+  DFViewerEx_large: {
+    title: 'DFViewer large',
+    file: 'DFViewerEx_large',
+    layout: 'HBox',
+  },
+  DFViewerEx_real_summary: {
+    title: 'DFViewer summary',
+    file: 'DFViewerEx_real_summary',
+    layout: 'HBox',
+  },
+  DFViewerEx_short_data: {
+    title: 'DFViewer short_data',
+    file: 'DFViewerEx_short_data',
+    layout: 'HBox',
+  },
+
+  StatusBarEx: { title: 'StatusBar', file: 'StatusBarEx', layout: 'VBox' },
+  HistogramEx: { title: 'Histogram', file: 'HistogramEx', layout: 'HBox' },
+
 };
 
 // The examples use a code-loading technique that I have described in
@@ -43,6 +83,49 @@ const LeftMenuItem = (props): JSX.Element => (
 // eslint-disable-next-line no-var
 declare var VERSION: string;
 
+// eslint-disable-next-line no-var
+//declare var VERSION: string = "handwritten";
+
+const RenderEl = (ex: any): JSX.Element => {
+  if (ex.layout === 'HBox') {
+    return (
+      <div className="row">
+        <div className="col-12 col-xl-5 mb-1">
+          <React.Suspense fallback={<div>Loading component...</div>}>
+            <div className="component-example">
+              <h2> Component example </h2>
+              {React.createElement(ex.comp)}
+            </div>
+          </React.Suspense>
+        </div>
+        <div className="col-12 col-xl-7">
+          <React.Suspense fallback={<div>Parsing code...</div>}>
+            <CodeBlock title={ex.title} code={ex.code} text={ex.text} />
+          </React.Suspense>
+        </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="row">
+        <div className="row">
+          <React.Suspense fallback={<div>Loading component...</div>}>
+            <div className="component-example">
+              <h2> Component example </h2>
+              {React.createElement(ex.comp)}
+            </div>
+          </React.Suspense>
+        </div>
+        <div className="row">
+          <React.Suspense fallback={<div>Parsing code...</div>}>
+            <CodeBlock title={ex.title} code={ex.code} text={ex.text} />
+          </React.Suspense>
+        </div>
+      </div>
+    );
+  }
+};
+
 const App = (): JSX.Element => {
     const [jsText, setJSText] = React.useState<string>('');
 
@@ -69,22 +152,7 @@ const App = (): JSX.Element => {
                         </Route>
                         {Object.keys(examples).map((e) => (
                             <Route key={e} path={`/${e}`}>
-                                <div className='row'>
-                                    <div className='col-12 col-xl-5 mb-1'>
-                                        <React.Suspense fallback={<div>Loading component...</div>}>
-                                            {React.createElement(examples[e].comp)}
-                                        </React.Suspense>
-                                    </div>
-                                    <div className='col-12 col-xl-7'>
-                                        <React.Suspense fallback={<div>Parsing code...</div>}>
-                                            <CodeBlock
-                                                title={examples[e].title}
-                                                code={examples[e].code}
-                                                text={examples[e].text}
-                                            />
-                                        </React.Suspense>
-                                    </div>
-                                </div>
+				{RenderEl(examples[e])}
                             </Route>
                         ))}
                     </div>
