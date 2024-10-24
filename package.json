@@ -1,7 +1,7 @@
 {
-  "name": "react-edit-list",
-  "version": "1.1.0",
-  "description": "Universal Editable List React Component",
+  "name": "buckaroo-js-core",
+  "version": "0.8.0",
+  "description": "Core JS/tsx components of buckaroo, packaged separately",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -22,9 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmomtchev/react-edit-list.git"
+    "url": "git+https://github.com/paddymul/buckaroo-js-core.git",
   },
-  "homepage": "https://mmomtchev.github.io/react-edit-list/",
+  "homepage": "https://github.com/paddymul/buckaroo-js-core",
   "keywords": [
     "react",
     "edit",
@@ -38,7 +38,7 @@
     "js",
     "typescript"
   ],
-  "author": "Momtchil Momtchev <momtchil@momtchev.com>",
+  "author": "Paddy Mullen <paddy@paddymullen.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mmomtchev/react-edit-list/issues"
