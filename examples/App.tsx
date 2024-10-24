@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';

@@ -4,7 +4,7 @@ import * as React from 'react';
 // @ts-ignore
 import exampleCss from '!!raw-loader!./example.css';
 
-const CodePenButton = React.memo(function _CodePenButton(props: {
+const CodePenButton = React.memo(function CodePenButtonRaw(props: {
     text: Promise<string>;
     title: string;
 }) {
