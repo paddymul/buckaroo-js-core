@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paddymul/buckaroo-js-core.git",
+    "url": "git+https://github.com/paddymul/buckaroo-js-core.git"
   },
   "homepage": "https://github.com/paddymul/buckaroo-js-core",
   "keywords": [
@@ -41,7 +41,7 @@
   "author": "Paddy Mullen <paddy@paddymullen.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mmomtchev/react-edit-list/issues"
+    "url": "https://github.com/paddymul/buckaroo-js-core/issues"
   },
   "dependencies": {
     "ag-grid-community": "^31.0.3",
@@ -49,7 +49,6 @@
     "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-smooth": "^2.0.3",
     "recharts": "^2.7.3"
   },
   "devDependencies": {
