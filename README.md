@@ -73,6 +73,11 @@ Refer to the [examples](https://mmomtchev.github.io/react-edit-list/)
     *   [filler](#filler)
     *   [rowClassName](#rowclassname)
     *   [insertClassName](#insertclassname)
+*   [\_](#\_)
+*   [AnimationTiming](#animationtiming)
+*   [AnimationDuration](#animationduration)
+*   [React](#react)
+*   [defaultProps](#defaultprops)
 *   [ReactEditList](#reacteditlist)
     *   [Parameters](#parameters)
 
@@ -382,6 +387,34 @@ Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 Optional class to use for the empty row allowing insertion
 
 Type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+## \_
+
+This module contains the standard library from rechart so that base rechart code cna be imported with the minimum amount of rewriting
+
+## AnimationTiming
+
+The type of easing function to use for animations
+
+Type: (`"ease"` | `"ease-in"` | `"ease-out"` | `"ease-in-out"` | `"linear"`)
+
+## AnimationDuration
+
+Specifies the duration of animation, the unit of this option is ms.
+
+Type: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)
+
+## React
+
+Reimplementation of rechart tooltips.  most of this is copied from ??? in the recharts source tree because the parts we are editting are deeply embedded into functions.
+
+Most of the point of this is to get tooltips to be absolutely positioned off of document.body, not the nearest parent element.  AG-Grid hides those tooltips otherwise.
+
+## defaultProps
+
+needs to be set so that renderByOrder can access an have default values for
+children.props when there are no props set by the consumer
+doesn't work if using default parameters
 
 ## ReactEditList
 
