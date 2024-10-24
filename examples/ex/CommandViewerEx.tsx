@@ -1,8 +1,6 @@
 import * as React from 'react';
 
-//import {bakedOperations, bakedCommandConfig } from '../../../js/baked_data/staticData';
-import { bakedData } from 'buckaroo';
-import { extraComponents } from 'buckaroo';
+import { bakedData, extraComponents } from 'buckaroo-js-core';
 
 
 export default function Simple() {

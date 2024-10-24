@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
-import { extraComponents } from 'buckaroo';
-//import { DFData, DFViewerConfig } from 'buckaroo';
+import { extraComponents } from 'buckaroo-js-core';
+
 
 
 const data = [

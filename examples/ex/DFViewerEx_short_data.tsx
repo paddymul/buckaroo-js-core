@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { bakedData, extraComponents } from 'buckaroo';
+import { bakedData, extraComponents } from 'buckaroo-js-core';
 
 
 

@@ -1,8 +1,6 @@
 import React, { useState} from 'react';
-import { extraComponents, bakedData } from 'buckaroo';
+import { extraComponents, bakedData } from 'buckaroo-js-core';
 
-//import { realSummaryConfig, realSummaryTableData } from '../../../js/baked_data/staticData';
-//import { realSummaryConfig, realSummaryTableData } from 'buckaroo';
 
 
   export default function DFViewerExString() {
