@@ -1,7 +1,7 @@
 {
-  "name": "react-edit-list",
-  "version": "1.1.0",
-  "description": "Universal Editable List React Component",
+  "name": "buckaroo-js-core",
+  "version": "0.8.2",
+  "description": "Core JS/tsx components of buckaroo, packaged separately",
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
@@ -22,9 +22,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmomtchev/react-edit-list.git"
+    "url": "git+https://github.com/paddymul/buckaroo-js-core.git"
   },
-  "homepage": "https://mmomtchev.github.io/react-edit-list/",
+  "homepage": "https://github.com/paddymul/buckaroo-js-core",
   "keywords": [
     "react",
     "edit",
@@ -38,10 +38,10 @@
     "js",
     "typescript"
   ],
-  "author": "Momtchil Momtchev <momtchil@momtchev.com>",
+  "author": "Paddy Mullen <paddy@paddymullen.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mmomtchev/react-edit-list/issues"
+    "url": "https://github.com/paddymul/buckaroo-js-core/issues"
   },
   "dependencies": {
     "ag-grid-community": "^31.0.3",
@@ -49,8 +49,7 @@
     "lodash": "^4.17.21",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-smooth": "^2.0.3",
-    "recharts": "^2.7.3"
+    "recharts": "^2.13.0"
   },
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",

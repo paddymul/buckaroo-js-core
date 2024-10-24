@@ -14,7 +14,6 @@ import React, {
     useRef,
     useCallback
 } from 'react';
-import {translateStyle} from 'react-smooth';
 import _ from 'lodash';
 //import classNames from 'classnames';
 
@@ -305,25 +304,25 @@ export const Tooltip = <TValue extends ValueType, TName extends NameType>(
     }
 
     outerStyle = {
-        ...translateStyle({
+        ...{
             transform: useTranslate3d
                 ? `translate3d(${translateX}px, ${translateY}px, 0)`
                 : `translate(${translateX}px, ${translateY}px)`
-        }),
+        },
         ...outerStyle
     };
 
     if (isAnimationActive && active) {
         outerStyle = {
-            ...translateStyle({
+            ...{
                 transition: `transform ${animationDuration}ms ${animationEasing}`
-            }),
+            },
             ...outerStyle
         };
     }
 
     // eslint-disable-next-line
-  // const cls = classNames(CLS_PREFIX, {
+    // const cls = classNames(CLS_PREFIX, {
     //   [`${CLS_PREFIX}-right`]: isNumber(translateX) && coordinate && isNumber(coordinate.x) && translateX >= coordinate.x,
     //   [`${CLS_PREFIX}-left`]: isNumber(translateX) && coordinate && isNumber(coordinate.x) && translateX < coordinate.x,
     //   [`${CLS_PREFIX}-bottom`]:

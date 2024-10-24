@@ -20,7 +20,8 @@ const webpackConfig = (env): Configuration => {
         resolve: {
             alias: {
                 'react-edit-list': path.resolve(__dirname, 'src'),
-                'buckaroo': path.resolve(__dirname, 'src')
+                'buckaroo': path.resolve(__dirname, 'src'),
+                'buckaroo-js-core': path.resolve(__dirname, 'src')
             },
             extensions: ['.ts', '.tsx', '.js'],
             //TODO waiting on https://github.com/dividab/tsconfig-paths-webpack-plugin/issues/61

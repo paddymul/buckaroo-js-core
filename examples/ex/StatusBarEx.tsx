@@ -4,7 +4,7 @@ import {
   extraComponents,
   BuckarooOptions,
   DFMeta,
-} from 'buckaroo';
+} from 'buckaroo-js-core';
 
 export default function StatusBarEx() {
   console.clear();

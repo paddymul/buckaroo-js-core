@@ -13,11 +13,11 @@ const CodePenButton = React.memo(function CodePenButtonRaw(props: {
         props.text.then((r) => {
             r = r.replace(
                 /import (.*) from '(.*)'/g,
-                (match, g1, g2) => `import ${g1} from "https://cdn.skypack.dev/${g2}"`
+                (match, g1, g2) => `import ${g1} from "https://cdn.jsdelivr.net/npm/${g2}/+esm"`
             );
             r = r.replace(/import '.*';\n/g, '');
             r = r.replace(/export default function (.*)/, 'function Comp() {');
-            r = 'import * as ReactDOM from "https://cdn.skypack.dev/react-dom";\n' + r;
+            r = 'import * as ReactDOM from "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/+esm";\n' + r
             r += '\nReactDOM.render(<Comp />, document.getElementById("root"));\n';
             setText(r);
         });
@@ -38,16 +38,11 @@ const CodePenButton = React.memo(function CodePenButtonRaw(props: {
                 type='hidden'
                 name='data'
                 value={JSON.stringify({
-                    title: 'react-edit-list ' + props.title,
+                    title: 'Buckaroo-js-core  ' + props.title,
                     html: '<div id="root"></div>',
                     js: text,
                     js_pre_processor: 'typescript',
                     css: exampleCss,
-                    js_external:
-                        'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js',
-                    css_external:
-                        'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css;' +
-                        'https://unpkg.com/react-day-picker/dist/style.css'
                 })}
             />
             <button

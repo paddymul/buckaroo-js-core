@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import _ from 'lodash';
 
-import { extraComponents } from 'buckaroo';
+import { extraComponents } from 'buckaroo-js-core';
 //import { DFData, DFViewerConfig } from 'buckaroo';
 
 const data = [
