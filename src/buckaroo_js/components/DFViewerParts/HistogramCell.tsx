@@ -16,9 +16,8 @@ import {ValueFormatterFunc} from 'ag-grid-community';
 
 function defaultFormatter<TValue extends ValueType>(value: TValue) {
     return _.isArray(value) && isNumOrStr(value[0]) && isNumOrStr(value[1])
-//        ? (value.join(' ~ ') as TValue)
-        ? (`{value[0]} ~ {value[1]}` as TValue)
-
+        ? //        ? (value.join(' ~ ') as TValue)
+          ('{value[0]} ~ {value[1]}' as TValue)
         : value;
 }
 
