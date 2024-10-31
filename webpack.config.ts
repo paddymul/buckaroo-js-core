@@ -19,8 +19,6 @@ const webpackConfig = (env): Configuration => {
         ...(env.production || !env.development ? {} : {devtool: 'eval-source-map'}),
         resolve: {
             alias: {
-                'react-edit-list': path.resolve(__dirname, 'src'),
-                'buckaroo': path.resolve(__dirname, 'src'),
                 'buckaroo-js-core': path.resolve(__dirname, 'src')
             },
             extensions: ['.ts', '.tsx', '.js'],

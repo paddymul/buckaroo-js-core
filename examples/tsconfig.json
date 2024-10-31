@@ -21,7 +21,7 @@
         "moduleResolution": "node",
         "downlevelIteration": true,
         "paths": {
-            "react-edit-list": ["../src"]
+            "buckaroo-js-core": ["../src"]
         }
     },
     "include": [

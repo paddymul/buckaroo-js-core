@@ -5,7 +5,7 @@ module.exports = {
         '^.+.(t|j)sx?$': 'ts-jest'
     },
     moduleNameMapper: {
-        '^react-edit-list$': '<rootDir>/src'
+        '^buckaroo-js-core$': '<rootDir>/src'
     },
     globals: {
         'ts-jest': {

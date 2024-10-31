@@ -24,7 +24,7 @@
         "skipLibCheck": true,
         "strict": true,
         "paths": {
-            "react-edit-list": [
+            "buckaroo-js-core": [
                 "./src"
             ]
         }

@@ -124,7 +124,7 @@ const App = (): JSX.Element => {
     return (
         <Router>
             <h1 className='m-2'>
-                <strong>react-edit-list {VERSION} Examples</strong>
+                <strong>Buckaroo-js-core {VERSION} Examples</strong>
             </h1>
             <div className='d-flex flex-row p-3'>
                 <div className='d-flex flex-column left-menu me-2'>
