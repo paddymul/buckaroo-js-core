@@ -17,7 +17,9 @@ const CodePenButton = React.memo(function CodePenButtonRaw(props: {
             );
             r = r.replace(/import '.*';\n/g, '');
             r = r.replace(/export default function (.*)/, 'function Comp() {');
-            r = 'import * as ReactDOM from "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/+esm";\n' + r
+            r =
+                'import * as ReactDOM from "https://cdn.jsdelivr.net/npm/react-dom@18.3.1/+esm";\n' +
+                r;
             r += '\nReactDOM.render(<Comp />, document.getElementById("root"));\n';
             setText(r);
         });
@@ -42,7 +44,7 @@ const CodePenButton = React.memo(function CodePenButtonRaw(props: {
                     html: '<div id="root"></div>',
                     js: text,
                     js_pre_processor: 'typescript',
-                    css: exampleCss,
+                    css: exampleCss
                 })}
             />
             <button

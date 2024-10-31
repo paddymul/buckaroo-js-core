@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import { bakedData, extraComponents } from 'buckaroo-js-core';
-
+import {bakedData, extraComponents} from 'buckaroo-js-core';
 
 export default function Simple() {
     return (

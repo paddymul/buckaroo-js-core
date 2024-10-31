@@ -1,3 +1,3 @@
-import { extraComponents } from 'buckaroo-js-core';
+import {extraComponents} from 'buckaroo-js-core';
 
 export default extraComponents.DFViewerEx;

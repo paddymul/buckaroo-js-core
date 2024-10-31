@@ -3,7 +3,6 @@ import React from 'react';
 import {createPortal} from 'react-dom';
 
 import {
-
     Bar,
     BarChart,
     Tooltip
@@ -13,7 +12,7 @@ import {
 } from 'recharts';
 //import {Tooltip} from '../../vendor/RechartTooltip';
 
-import {  } from 'recharts';
+import {} from 'recharts';
 
 //import {isNumOrStr, ValueType} from '../../vendor/RechartExtra';
 import {ValueFormatterFunc} from 'ag-grid-community';
@@ -61,28 +60,30 @@ export function FloatingTooltip({items, x, y}: any) {
     );
 }
 
-const CustomTooltip = ({ active, payload, label, screenCoords }) => {
-  if (active && payload && payload.length && screenCoords) {
-    return createPortal(
-      <div
-        style={{
-          backgroundColor: "#eee",
-          padding: "5px 10px 5px 10px",
-          color: "#111",
-          position: "absolute",
-          top: screenCoords.y + 10,
-          left: screenCoords.x + 10,
-        }}
-      >
-        <p className="label">{`${label} : ${payload[0].value}`}</p>
-      </div>,
-      document.body
-    );
-  }
+const CustomTooltip = ({active, payload, label, screenCoords}) => {
+    if (active && payload && payload.length && screenCoords) {
+        // console.log("payload", payload, "label", label);
+        // console.log("payload[0].payload", payload[0].payload, payload[0].payload.name)
+        const name = payload[0].payload.name;
+        return createPortal(
+            <div
+                style={{
+                    backgroundColor: '#eee',
+                    padding: '5px 10px 5px 10px',
+                    color: '#111',
+                    position: 'absolute',
+                    top: screenCoords.y + 10,
+                    left: screenCoords.x + 10
+                }}
+            >
+                <p className='label'>{`${name} : ${payload[0].value}`}</p>
+            </div>,
+            document.body
+        );
+    }
 
-  return null;
+    return null;
 };
-
 
 export const HistogramCell = (props: any) => {
     if (props === undefined || props.value === undefined) {
@@ -102,10 +103,10 @@ export const HistogramCell = (props: any) => {
         console.log('dumbClickHandler', rechartsArgs);
     };
 
-  const [screenCoords, setScreenCoords] = React.useState<{
-    x: number;
-    y: number;
-  } | null>(null);
+    const [screenCoords, setScreenCoords] = React.useState<{
+        x: number;
+        y: number;
+    } | null>(null);
     return (
         <div className='histogram-component'>
             <BarChart
@@ -113,11 +114,11 @@ export const HistogramCell = (props: any) => {
                 height={24}
                 barGap={1}
                 data={histogram}
-        onClick={dumbClickHandler}
-	onMouseMove={(_, e) => {
-          // console.log(e);
-          setScreenCoords({ x: e.clientX, y: e.clientY });
-        }}
+                onClick={dumbClickHandler}
+                onMouseMove={(_, e) => {
+                    // console.log(e);
+                    setScreenCoords({x: e.clientX, y: e.clientY});
+                }}
             >
                 <defs>
                     <pattern id='star' width='10' height='10' patternUnits='userSpaceOnUse'>
@@ -172,17 +173,15 @@ export const HistogramCell = (props: any) => {
                 <Bar dataKey='unique' stroke='#0f0' fill='url(#checkers)' stackId='stack' />
                 <Bar dataKey='longtail' stroke='teal' fill='url(#leafs)' stackId='stack' />
                 <Bar dataKey='NA' fill='url(#stripe)' stackId='stack' />
-        <Tooltip
-        formatter={formatter}
-          allowEscapeViewBox={{ x: true, y: true }}
-          wrapperStyle={{ zIndex: 99999999, color: "#111" }}
-          content={(props) => (
-            // @ts-expect-error ignore ts for now
-            <CustomTooltip {...props} screenCoords={screenCoords} />
-          )}
-        />
-
-
+                <Tooltip
+                    formatter={formatter}
+                    allowEscapeViewBox={{x: true, y: true}}
+                    wrapperStyle={{zIndex: 99999999, color: '#111'}}
+                    content={(props) => (
+                        // @ts-expect-error ignore ts for now
+                        <CustomTooltip {...props} screenCoords={screenCoords} />
+                    )}
+                />
             </BarChart>
         </div>
     );
