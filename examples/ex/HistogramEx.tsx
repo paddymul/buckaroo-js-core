@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {extraComponents, bakedData} from 'buckaroo-js-core';
+import {extraComponents} from 'buckaroo-js-core';
 
 const Numeric = () => {
     const histo = [

@@ -11,8 +11,6 @@ import {
     SizeColumnsToContentStrategy,
     SizeColumnsToFitProvidedWidthStrategy
 } from 'ag-grid-community';
-import {summaryDfForTableDf, tableDf} from '../../baked_data/staticData';
-
 import {getCellRendererSelector} from './gridUtils';
 
 export type setColumFunc = (newCol: string) => void;
@@ -193,23 +191,4 @@ export const heightStyle = (hArgs: HeightStyleArgs): HeightStyleI => {
         inIframe: inIframeClass
     };
 
-    /*
-  ab = window.location.host;
- "cskfus796ts-496ff2e9c6d22116-0-colab.googleusercontent.com"
- bc = window.location.pathname
- "/outputframe.html" 
-*/
 };
-
-export function DFViewerEx() {
-    const [activeCol, setActiveCol] = useState('tripduration');
-    return (
-        <DFViewer
-            df_data={tableDf.data}
-            df_viewer_config={tableDf.dfviewer_config}
-            summary_stats_data={summaryDfForTableDf}
-            activeCol={activeCol}
-            setActiveCol={setActiveCol}
-        />
-    );
-}
