@@ -18,7 +18,7 @@ import {
     DFViewerConfig
 } from './DFWhole';
 import _, {zipObject} from 'lodash';
-import {getTextCellRenderer} from './HistogramCell';
+import {getTextCellRenderer} from './OtherRenderers';
 
 import {DFData, SDFMeasure, SDFT} from './DFWhole';
 
